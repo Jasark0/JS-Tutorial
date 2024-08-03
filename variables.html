@@ -11,6 +11,9 @@
 
       console.log(typeof 3); //logs "number"
       console.log(typeof 'string'); //logs "string"
+      console.log(typeof true); //logs "boolean"
+      console.log(5 == '5.00'); //true, since == compares their quantity
+      console.log(5 === '5.00'); //false, authentic way to compare whether they are EQUAL
     </script>
     <p>Cart Quantity</p>
     <button onclick="console.log(`Cart Quantity: ${cartQuantity}`)">Show Quantity</button> <!--Note that ` ` are used-->
