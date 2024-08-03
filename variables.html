@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Variables</title>
+  </head>
+  <body>
+    <script>
+      let cartQuantity = 0;
+      const constantNum = 2; //Constant - cannot change the number
+      var variable = 3; //Original way to create var - has some issues so we use let by default
+
+      console.log(typeof 3); //logs "number"
+      console.log(typeof 'string'); //logs "string"
+    </script>
+    <p>Cart Quantity</p>
+    <button onclick="console.log(`Cart Quantity: ${cartQuantity}`)">Show Quantity</button> <!--Note that ` ` are used-->
+    <button onclick="cartQuantity++; console.log('Cart cartQuantity: ' + cartQuantity)">Add to Cart</button>
+    <button onclick="cartQuantity+=2; console.log('Cart cartQuantity: ' + cartQuantity)">+2</button>
+    <button onclick="cartQuantity+=3; console.log('Cart cartQuantity: ' + cartQuantity)">+3</button>
+    <button onclick="cartQuantity = 0; console.log('Cart was reset.')">Reset Cart</button>
+
+  </body>
+</html>
