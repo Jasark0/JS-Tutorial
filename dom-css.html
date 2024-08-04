@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dom Project</title>
+    <style>
+      body{
+        font-family: Arial;
+      }
+
+      .subscribe-button{
+        border: none;
+        background-color: black;
+        color: white;
+        padding: 8px 15px 8px 15px;
+        border-radius: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 40px;
+      }
+
+      .is-subscribed{
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+
+      .cost-input{
+        font-size: 15px;
+        padding: 10px;
+      }
+
+      .calculate-button{
+        border: none;
+        padding: 11px 15px;
+        background-color: green;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button onclick="subscribe();" class="js-subscribe-button subscribe-button">
+      Subscribe
+    </button>
+
+    <p>
+      Amazon Shipping Calculator
+    </p>
+    <p>
+      Order under $40 = +$10 shipping.
+    </p>
+    <p>
+      Order over $40 = FREE shipping.
+    </p>
+
+    <input placeholder="Cost of order" class="total-cost cost-input" onkeydown="enterCalculate();"
+    >
+    <button onclick="
+      amazonCalculate();
+    " class="calculate-button">
+      Calculate
+    </button>
+
+    <p class="calculated-cost"></p>
+
+    <script>
+      function subscribe(){
+        const buttonElement = document.querySelector('.js-subscribe-button');
+        if (buttonElement.innerText === 'Subscribe'){
+          buttonElement.innerHTML = 'Subscribed';
+          buttonElement.classList.add('is-subscribed');
+        }
+        else{
+          buttonElement.innerHTML = 'Subscribe';
+          buttonElement.classList.remove('is-subscribed');
+        }
+      }
+      
+      function amazonCalculate(){
+        const inputElement = document.querySelector('.total-cost');
+        let cost = Number(inputElement.value);
+        if (cost < 40){
+          cost += 10;
+          document.querySelector('.calculated-cost').innerHTML = `$${cost}`;
+        }
+        else{
+          document.querySelector('.calculated-cost').innerHTML = `$${cost}`;
+        }
+      }
+
+      function enterCalculate(){
+        if (event.key == 'Enter'){
+          amazonCalculate();
+        }
+      }
+    </script>
+  </body>
+</html>
