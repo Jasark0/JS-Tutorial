@@ -1,4 +1,13 @@
-const tasks = [];
+const tasks = [
+  {
+    name: 'make dinner',
+    dueDate: '2022-12-22'
+  },
+  {
+    name: 'wash dishes',
+    dueDate: '2022-12-22'
+  }
+];
 
 updateTask();
 
@@ -6,16 +15,29 @@ function updateTask(){
   let todoTask = '';
 
   for (let i=0; i<tasks.length; i++){
-  const todo = tasks[i];
-  const html = `<p>${todo}</p>`
+  const todoObject = tasks[i];
+  //const name = todoObject.name;
+  //const dueDate = todoObject.dueDate;
+  const { name, dueDate } = todoObject;
+
+  const html = `
+    <p>
+      ${name} ${dueDate}
+      <button onclick="tasks.splice(${i}, 1); updateTask();">Delete</button>
+    </p>
+  `;
   todoTask += html;
 }
 
 document.querySelector('.js-todo-task').innerHTML = todoTask;
+
 }
 function addTodo(){
-  tasks.push(document.querySelector('.js-name-input').value);
-  console.log(tasks);
+  const dateInputElement = document.querySelector('.js-due-date-input');
+  const dueDate = dateInputElement.value;
+  const name = document.querySelector('.js-name-input').value;
+
+  tasks.push({name, dueDate});
   document.querySelector('.js-name-input').value = '';
   updateTask();
 }
