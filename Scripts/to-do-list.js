@@ -21,10 +21,13 @@ function updateTask(){
   const { name, dueDate } = todoObject;
 
   const html = `
-    <p>
-      ${name} ${dueDate}
-      <button onclick="tasks.splice(${i}, 1); updateTask();">Delete</button>
-    </p>
+    <div>
+      ${name}
+    </div>
+    <div>
+    ${dueDate}
+    </div>
+    <button onclick="tasks.splice(${i}, 1); updateTask();" class="delete-button">Delete</button>
   `;
   todoTask += html;
 }
