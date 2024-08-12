@@ -19,7 +19,6 @@ function updateTask(){
   //const name = todoObject.name;
   //const dueDate = todoObject.dueDate;
   const { name, dueDate } = todoObject;
-
   const html = `
     <div>
       ${name}

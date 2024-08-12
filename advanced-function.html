@@ -45,7 +45,7 @@
                 console.log('hello4');
             }); */
 
-            setTimeout(function(){
+            /*setTimeout(function(){
                 console.log('timeout');
                 console.log('timeout2');
             }, 3000);
@@ -55,6 +55,20 @@
             setInterval(function(){
                 console.log('interval');
             }, 3000);
+            
+            console.log('next line 2');*/
+
+            [
+                'make dinner',
+                'wash dishes',
+                'watch YouTube'
+            ].forEach(function(value, index, something){
+                if (value === 'wash dishes'){
+                    return;
+                }
+                console.log(index);
+                console.log(value);
+            });
         </script>
     </body>
 </html>
