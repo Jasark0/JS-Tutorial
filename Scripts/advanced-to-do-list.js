@@ -15,7 +15,6 @@ const tasks = [
     let todoTask = '';
     
     tasks.forEach(function(todoObject, index){
-        const todoObject = tasks[index];
         const { name, dueDate } = todoObject;
         const html = `
         <div>
@@ -29,9 +28,10 @@ const tasks = [
         todoTask += html;
     });
   
-  document.querySelector('.js-todo-task').innerHTML = todoTask;
+    document.querySelector('.js-todo-task').innerHTML = todoTask;
   
   }
+
   function addTodo(){
     const dateInputElement = document.querySelector('.js-due-date-input');
     const dueDate = dateInputElement.value;
